@@ -14,9 +14,9 @@ func getEnvOrDefault(k, def string) string {
 	return def
 }
 
-func getEnvOrDefaultInt(k string, def int64) int64 {
-	if v, err := strconv.ParseInt(getEnvOrDefault(k, string(def)), 10, 64); err == nil {
-		return v
+func getEnvOrDefaultInt(k string, def int) int {
+	if v, err := strconv.ParseInt(getEnvOrDefault(k, string(def)), 10, 32); err == nil {
+		return int(v)
 	}
 	return def
 }
