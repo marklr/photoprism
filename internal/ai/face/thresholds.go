@@ -7,12 +7,9 @@ import (
 	"strconv"
 )
 
-log = logrus.StandardLogger()
-log.SetLevel(logrus.TraceLevel)
-
 func getEnvOrDefault(k, def string) string {
 	if v := os.Getenv(k); v != "" {
-		log.Infof("%s=%s\n", k, v);
+		fmt.Printf("%s=%s\n", k, v)
 		return v
 	}
 	return def
